@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hy.callback.db.user.IUserDao">
+
+    <resultMap id="user" type="com.hy.callback.entity.User">
+        <id property="uid" column="uid"></id>
+        <result property="uname" column="uname"></result>
+        <result property="pwd" column="pwd"></result>
+    </resultMap>
+
+    <select id="findByName" resultMap="user">
+        select * from user where uname=#{userName}
+    </select>
+
+    <insert id="addUserEntity">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="uid">
+            select last_insert_id() as user_id
+        </selectKey>
+        insert into user(uname,pwd)
+        values (#{uname},#{pwd})
+    </insert>
+
+    <select id="findAll" resultMap="user">
+        select * from user
+    </select>
+</mapper>
