@@ -39,10 +39,10 @@ public class LoginService {
                     if (one == null) {
                         return;
                     }
-                    if (one.getPwd().equals(pwd)) {
+                    if (!one.getPwd().equals(pwd)) {
                         return;
                     }
-                    User user = new User().setPwd(one.getPwd())
+                    user = new User().setPwd(one.getPwd())
                             .setUid(one.getUid())
                             .setUname(one.getUname());
                     return;

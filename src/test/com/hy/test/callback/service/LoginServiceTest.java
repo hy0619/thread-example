@@ -23,8 +23,8 @@ public class LoginServiceTest {
     private static Logger logger = LoggerFactory.getLogger(LoginServiceTest.class);
     @Test
     public void testLogin(){
-        String uname = "h";
-        String pwd = "123";
+        String uname = "1";
+        String pwd = "1";
         //获取主线程
         MainThreadProcessor.getInstance().submit(() -> {
             LoginService.getInstance().doLogin(uname , pwd , (user)->{
