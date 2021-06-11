@@ -3,7 +3,7 @@ Navicat MySQL Data Transfer
 
 Source Server         : vm-mysql8-docker
 Source Server Version : 80023
-Source Host           : 192.168.229.128:3306
+Source Host
 Source Database       : user-db
 
 Target Server Type    : MYSQL
