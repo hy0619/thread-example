@@ -22,7 +22,7 @@ public class MainThreadProcessor {
                     ,   1
                     , 0L
                     , TimeUnit.MILLISECONDS
-                    , new LinkedBlockingDeque<>(25000)
+                    , new LinkedBlockingDeque<>(2500)
                     , r -> {
                 Thread thread = new Thread(r);
                 thread.setName("mainThreadProcessor");
